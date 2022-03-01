@@ -19,12 +19,13 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
-import TodosController from 'App/Controllers/Http/TodosController'
 
 Route.get('/', async ({ view }) => {
   return view.render('welcome')
 })
 
 Route.get('/todo', async () => {
+  const { default: TodosController } = await import('App/Controllers/Http/TodosController')
+
   return new TodosController().index()
 })
