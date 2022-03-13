@@ -9,4 +9,10 @@ export default class TodosController {
 
     return View.render('todo', {todos: todos})
   }
+
+  public async store() {
+    await Todo.create({ name: "lorensum ipsum" })
+
+    return "sukses"
+  }
 }

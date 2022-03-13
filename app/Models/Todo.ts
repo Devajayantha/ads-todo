@@ -6,7 +6,7 @@ export default class Todo extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
-  @column.()
+  @column()
   public name: string
 
   @column.dateTime({ autoCreate: true })

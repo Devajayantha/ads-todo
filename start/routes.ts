@@ -29,3 +29,9 @@ Route.get('/todo', async () => {
 
   return new TodosController().index()
 })
+
+Route.get('/todo/store', async () => {
+  const { default: TodosController } = await import('App/Controllers/Http/TodosController')
+
+  return new TodosController().store()
+})
