@@ -32,6 +32,9 @@ Route.get('/todo', async () => {
 
 Route.get('/todo/store', async () => {
   const { default: TodosController } = await import('App/Controllers/Http/TodosController')
+  const { default: HttpContextContract } = await import('@ioc:Adonis/Core/HttpContext')
 
-  return new TodosController().store()
+
+
+  return new TodosController().store(HttpContextContract)
 })
